@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 10:32:44 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/05/01 10:31:13 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/05/01 10:32:47 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "printf.h"
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char chr);
-int		ft_getformat(char c, va_list args);
+int	ft_getformat(char c, va_list args)
+{
+	int	counter;
+
+	counter = 0;
+	if (c == '%')
+		ft_putchar(c);
+	return (counter);
+}
