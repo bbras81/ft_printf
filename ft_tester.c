@@ -14,5 +14,5 @@
 
 int	main(void)
 {
-	ft_printf(NULL);
+	ft_printf("%%");
 }

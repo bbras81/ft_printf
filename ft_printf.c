@@ -14,7 +14,6 @@
 int	ft_printf(const char *str, ...)
 {
 	int		counter;
-	int		return_counter;
 	va_list	args;
 
 	if (!str)

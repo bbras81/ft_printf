@@ -16,7 +16,7 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I.
 
-SRCS = ft_printf.c ft_putchar.c ft_tester.c
+SRCS = ft_printf.c ft_putchar.c ft_tester.c ft_utils.c
 
 
 OBJS = $(SRCS:.c=.o)

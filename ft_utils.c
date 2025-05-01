@@ -18,6 +18,9 @@ int	ft_getformat(char c, va_list args)
 
 	counter = 0;
 	if (c == '%')
-		ft_putchar(c);
+		ft_putchar('%');
+  else if (c = c)
+    ft_putchar(va_arg(args), int);
 	return (counter);
 }
+int	return_counter;
