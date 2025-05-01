@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 21:39:40 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/05/01 20:46:59 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/05/01 21:39:38 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "printf.h"
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char chr);
-int		ft_getformat(char c, va_list args);
-int		ft_putstr(char *str);
+int	ft_putstr(char *str)
+{
+	int	counter;
+
+	counter = 0;
+	while (str[counter])
+	{
+		ft_putchar(str[counter]);
+		counter++;
+	}
+	return (counter);
+}
