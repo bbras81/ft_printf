@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:31:13 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 22:07:19 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/04/17 11:26:30 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/04/17 11:34:11 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	ft_getformat(char c, va_list args)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	counter;
+	unsigned int	counter;
 
 	counter = 0;
-	if (c == '%')
-		ft_putchar('%');
-	else if (c == 'c')
+	while (s[counter])
 	{
-		ft_putchar(va_arg(args, int));
-		counter = 1;
+		(*f)(counter, &s[counter]);
+		counter++;
 	}
-	else if (c == 's')
-	{
-		counter += ft_putstr(va_arg(args, char *));
-	}
-	else if (c == 'd')
-		counter += ft_putnbr(args, int, "0123456789");
-	return (counter);
 }

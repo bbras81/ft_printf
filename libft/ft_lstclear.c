@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/02 13:00:08 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/04/17 16:44:59 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/04/17 17:08:06 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "libft.h"
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char chr);
-int		ft_getformat(char c, va_list args);
-int		ft_putstr(char *str);
-int		ft_putnbr(unsigned long nbr, char *base);
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*temp;
+	t_list	*ptr;
 
-#endif
+	if (lst == NULL || *lst == NULL || del == NULL)
+		return ;
+	ptr = *lst;
+	while (ptr != NULL)
+	{
+		temp = ptr->next;
+		del(ptr->content);
+		free(ptr);
+		ptr = temp;
+	}
+	*lst = NULL;
+}

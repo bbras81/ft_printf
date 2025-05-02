@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ftisprint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/02 13:00:08 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/03/27 13:35:48 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/03/27 13:38:01 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "libft.h"
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char chr);
-int		ft_getformat(char c, va_list args);
-int		ft_putstr(char *str);
-int		ft_putnbr(unsigned long nbr, char *base);
-
-#endif
+int	ft_isprint(int chr)
+{
+	if (chr >= 32 && chr <= 126)
+		return (1);
+	return (0);
+}

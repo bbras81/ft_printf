@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/02 13:00:08 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/04/17 12:02:07 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/04/17 12:07:57 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "libft.h" 
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char chr);
-int		ft_getformat(char c, va_list args);
-int		ft_putstr(char *str);
-int		ft_putnbr(unsigned long nbr, char *base);
-
-#endif
+void	ft_putendl_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+	write(fd, "\n", 1);
+}
+/*
+int main()
+{
+	char *str = "Ola mundo! 42";
+	ft_putendl_fd(str, 1);
+}*/

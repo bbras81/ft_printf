@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 21:41:34 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 22:00:14 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/04/17 15:02:31 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/04/17 15:02:35 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	ft_putnbr(long nbr, char *base)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	counter;
-	int	base_len;
-
-	base_len = 0;
-	while (base[base_len])
-		base_len++;
-	counter = 0;
-	if (nbr >= base_len)
-		counter += ft_putnbr(nbr / base_len, base);
-	ft_putchar(base[nbr % base_len]);
-	return (counter);
+	new->next = *lst;
+	*lst = new;
 }

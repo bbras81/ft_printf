@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/02 13:00:08 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/04/11 17:39:52 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/04/12 11:59:10 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "libft.h"
 
-int		ft_printf(const char *str, ...);
-void	ft_putchar(char chr);
-int		ft_getformat(char c, va_list args);
-int		ft_putstr(char *str);
-int		ft_putnbr(unsigned long nbr, char *base);
+char	*ft_strdup(const char *s1)
+{
+	char	*newstr;
+	size_t	counter;
 
-#endif
+	if (!s1)
+		return (NULL);
+	counter = 0;
+	newstr = (char *)malloc(ft_strlen(s1) * sizeof(char) + 1);
+	if (!newstr)
+		return (NULL);
+	while (s1[counter])
+	{
+		newstr[counter] = s1[counter];
+		counter++;
+	}
+	newstr[counter] = '\0';
+	return (newstr);
+}

@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 20:46:59 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 21:39:38 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/03/31 10:58:48 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/03/31 11:18:42 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	ft_putstr(char *str)
+int	ft_isdigit(int chr)
 {
-	int	counter;
-
-	counter = 0;
-	while (str[counter])
-	{
-		ft_putchar(str[counter]);
-		counter++;
-	}
-	return (counter);
+	if (chr >= '0' && chr <= '9')
+		return (1);
+	return (0);
 }

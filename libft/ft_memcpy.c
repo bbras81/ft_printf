@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tester.c                                        :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 09:49:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 22:00:14 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/04/08 13:12:24 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/04/08 14:40:35 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-int	main(void)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	ft_printf("%d \n", 123);
+	size_t				counter;
+
+	counter = 0;
+	if (!dest && !src)
+		return (NULL);
+	while (counter < n)
+	{
+		((unsigned char *)dest)[counter] = ((unsigned char *)src)[counter];
+		counter++;
+	}
+	return (dest);
 }
