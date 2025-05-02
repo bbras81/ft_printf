@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
+/*   Created: 2025/05/01 20:46:59 by brunmigu          #+#    #+#             */
 /*   Updated: 2025/05/02 16:23:36 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 
-# include "libft/libft.h"
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "printf.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_print_str(char *str);
-#endif
+int	ft_(char *str)
+{
+	int	counter;
+
+	counter = 0;
+	while (str[counter])
+	{
+		ft_putchar(str[counter]);
+		counter++;
+	}
+	return (counter);
+}

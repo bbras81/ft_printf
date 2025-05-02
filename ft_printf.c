@@ -12,21 +12,49 @@
 
 #include "printf.h"
 
-int	ft_printf(const char *str, ...)
+static int	ft_getformat(char c, va_list args)
 {
 	int	counter;
 
+	counter = 0;
+	if (c == '%' && c != '\n')
+	{
+		counter = 1;
+		ft_putchar_fd('%', 1);
+	}
+	else if (c == 'c' && c != 'n')
+	{
+		counter = 1;
+		ft_putchar_fd(va_arg(args, int), 1);
+	}
+	else if (c == 's' && c != '\n')
+		counter += ft_print_str(va_arg(args, char *));
+	return (counter);
+}
+
+int	ft_printf(const char *str, ...)
+{
+	int		counter;
+	int		counter_ret;
+	va_list	args;
+
+	if (!str)
+		return (0);
+	va_start(args, str);
 	counter = -1;
+	counter_ret = 0;
 	while (str[++counter])
 	{
 		if (str[counter] == '%' && str[counter + 1] != '\n')
 		{
-			continue ;
+			counter++;
+			counter_ret += ft_getformat(str[counter], args);
 		}
 		else
 		{
 			ft_putchar_fd(str[counter], 1);
+			counter_ret++;
 		}
 	}
-	return (counter);
+	return (counter_ret);
 }

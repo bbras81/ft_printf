@@ -11,8 +11,15 @@
 /* ************************************************************************** */
 
 #include "printf.h"
+#include <stdio.h>
 
 int	main(void)
 {
-	ft_printf("ola Mundo");
+	int	printf_ret;
+	int	original_ret;
+
+	original_ret = printf("%s\n", "Ola Mundo");
+	printf_ret = ft_printf("%s\n", "Ola Mundo");
+	printf("este e o retorno do ft_printf %d\n", printf_ret);
+	printf("este e o retorno do printf %d\n", original_ret);
 }
