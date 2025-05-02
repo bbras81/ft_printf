@@ -6,7 +6,7 @@
 #    By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 09:47:45 by brunmigu          #+#    #+#              #
-#    Updated: 2025/05/01 21:33:24 by brunmigu         ###   ########.fr        #
+#    Updated: 2025/05/01 21:57:53 by brunmigu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I.
 
 SRCS = ft_printf.c ft_putchar.c  ft_utils.c \
-			 ft_putstr.c
+			 ft_putstr.c ft_putnbr.c \
 
 
 OBJS = $(SRCS:.c=.o)

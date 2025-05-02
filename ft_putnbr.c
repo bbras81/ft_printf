@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 10:31:13 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 22:07:19 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/05/01 21:41:34 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/05/01 22:00:14 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_getformat(char c, va_list args)
+int	ft_putnbr(long nbr, char *base)
 {
 	int	counter;
+	int	base_len;
 
+	base_len = 0;
+	while (base[base_len])
+		base_len++;
 	counter = 0;
-	if (c == '%')
-		ft_putchar('%');
-	else if (c == 'c')
-	{
-		ft_putchar(va_arg(args, int));
-		counter = 1;
-	}
-	else if (c == 's')
-	{
-		counter += ft_putstr(va_arg(args, char *));
-	}
-	else if (c == 'd')
-		counter += ft_putnbr(args, int, "0123456789");
+	if (nbr >= base_len)
+		counter += ft_putnbr(nbr / base_len, base);
+	ft_putchar(base[nbr % base_len]);
 	return (counter);
 }

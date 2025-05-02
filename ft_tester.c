@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 09:49:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/01 21:39:39 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/05/01 22:00:14 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	main(void)
 {
-	ft_printf("%s, \n%s \n", "Ola ", "Mundo");
+	ft_printf("%d \n", 123);
 }
