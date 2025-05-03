@@ -19,7 +19,7 @@ AR = ar rcs
 LIBFT = ./libft/libft.a
 LIBFTDIR = ./libft/
 
-SRCS = ft_printf.c ft_print_str.c libft/ft_putchar_fd.c
+SRCS = ft_printf.c ft_print_str.c ft_print_dec.c libft/ft_putchar_fd.c
 
 
 OBJS = $(SRCS:.c=.o)

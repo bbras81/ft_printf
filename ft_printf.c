@@ -17,18 +17,20 @@ static int	ft_getformat(char c, va_list args)
 	int	counter;
 
 	counter = 0;
-	if (c == '%' && c != '\n')
+	if (c == '%')
 	{
 		counter = 1;
 		ft_putchar_fd('%', 1);
 	}
-	else if (c == 'c' && c != 'n')
+	else if (c == 'c')
 	{
 		counter = 1;
 		ft_putchar_fd(va_arg(args, int), 1);
 	}
-	else if (c == 's' && c != '\n')
+	else if (c == 's')
 		counter += ft_print_str(va_arg(args, char *));
+	else if (c == 'd' || c == 'i')
+		counter += ft_print_dec(va_arg(args, int));
 	return (counter);
 }
 

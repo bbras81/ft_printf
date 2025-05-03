@@ -13,6 +13,7 @@
 # define FT_PRINTF_H
 
 # include "libft/libft.h"
+# include <limits.h>
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdio.h>
@@ -20,4 +21,6 @@
 
 int	ft_printf(const char *str, ...);
 int	ft_print_str(char *str);
+int	ft_print_dec(int nbr);
+
 #endif
