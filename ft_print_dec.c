@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 18:52:54 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/02 18:53:28 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/05/03 17:14:37 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 int	ft_print_dec(int nbr)
 {
-	int	counter;
+  int	counter;
 
-	counter = 0;
-	if (nbr == -2147483648)
-		counter += ft_print_str("2147483648");
-	else
-	{
-		if (nbr < 0)
-		{
-			counter += ft_print_str("-");
-			nbr *= -1;
-		}
-		if (nbr > 9)
-		{
-			counter+= ft_print_dec(nbr / 10);
-		}
-		ft_putchar_fd((nbr % 10) + 48, 1);
-	}
-	return (counter);
+  counter = 0;
+  if (nbr == -2147483648)
+    counter += ft_print_str("2147483648");
+  else
+  {
+    if (nbr < 0)
+    {
+      counter += ft_print_str("-");
+      nbr *= -1;
+    }
+    if (nbr > 9)
+    {
+      counter+= ft_print_dec(nbr / 10);
+    }
+    counter += ft_print_char((nbr % 10) + 48);
+  }
+  return (counter);
 }

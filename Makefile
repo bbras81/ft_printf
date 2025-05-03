@@ -6,7 +6,7 @@
 #    By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 09:47:45 by brunmigu          #+#    #+#              #
-#    Updated: 2025/05/02 13:31:21 by brunmigu         ###   ########.fr        #
+#    Updated: 2025/05/03 17:15:46 by brunmigu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ AR = ar rcs
 LIBFT = ./libft/libft.a
 LIBFTDIR = ./libft/
 
-SRCS = ft_printf.c ft_print_str.c ft_print_dec.c libft/ft_putchar_fd.c
+SRCS = ft_printf.c ft_print_str.c ft_print_dec.c libft/ft_putchar_fd.c \
+			 ft_print_char.c
 
 
 OBJS = $(SRCS:.c=.o)

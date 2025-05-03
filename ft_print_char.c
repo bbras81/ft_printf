@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/03 17:14:04 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/05/03 17:11:26 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/05/03 17:14:06 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
 
-# include "libft/libft.h"
-# include <limits.h>
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <unistd.h>
+#include "printf.h"
 
-int	ft_printf(const char *str, ...);
-int	ft_print_str(char *str);
-int	ft_print_dec(int nbr);
-int	ft_putstr(char *str);
-int	ft_print_char(char c);
-#endif
+int	ft_print_char(char c)
+{
+	int	counter;
+
+	counter = 1;
+	ft_putchar_fd(c, 1);
+	return (counter);
+}
