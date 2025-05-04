@@ -16,6 +16,8 @@ int	ft_print_str(char *str)
 	int	counter;
 
 	counter = -1;
+	if (!str)
+		return (ft_print_str("(null"));
 	while (str[++counter])
 	{
 		ft_putchar_fd(str[counter], 1);

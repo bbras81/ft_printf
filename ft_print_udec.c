@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_udec.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 20:46:59 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/04 08:11:16 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/05/04 08:15:29 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/05/04 08:24:33 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int	ft_putstr(char *str)
+int	ft_print_udec(unsigned int nb)
 {
 	int	counter;
 
 	counter = 0;
-	while (str[counter])
-	{
-		ft_putchar_fd(str[counter], 1);
-		counter++;
-	}
+	if (nb >= 10)
+		counter += ft_print_udec(nb / 10);
+	counter += ft_print_char((nb % 10) + 48);
 	return (counter);
 }
