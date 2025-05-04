@@ -32,9 +32,9 @@ static int	ft_getformat(char c, va_list args)
 	else if (c == 'd' || c == 'i')
 		counter += ft_print_dec(va_arg(args, int));
 	else if (c == 'u')
-		counter += ft_print_udec(va_arg(args, int));
+		counter += ft_print_udec(va_arg(args, unsigned int));
 	else if (c == 'x')
-		counter += ft_print_hex(va_arg(args, int));
+		counter += ft_print_hex(va_arg(args, unsigned int), "0123456789abgdef");
 	return (counter);
 }
 

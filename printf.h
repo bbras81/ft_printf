@@ -25,5 +25,5 @@ int	ft_print_dec(int nbr);
 int	ft_putstr(char *str);
 int	ft_print_char(char c);
 int	ft_print_udec(unsigned int nbr);
-int	ft_print_hex(unsigned long nbr);
+int	ft_print_hex(unsigned long nbr, char *base);
 #endif
