@@ -84,12 +84,12 @@ int	main(void)
 	ret_ft = ft_printf("ft_printf: [Hex lower: %x]\n", 255);
 	ret_std = printf("printf   : [Hex lower: %x]\n", 255);
 	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
-	//	ret_ft = ft_printf("ft_printf: [Hex upper: %X]\n", 255);
-	//	ret_std = printf("printf   : [Hex upper: %X]\n", 255);
-	//	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
-	//	ret_ft = ft_printf("ft_printf: [ULONG_MAX: %X]\n", ULONG_MAX);
-	//	ret_std = printf("printf   : [ULONG_MAX: %X]\n", ULONG_MAX);
-	//	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
+	ret_ft = ft_printf("ft_printf: [Hex upper: %X]\n", 255);
+	ret_std = printf("printf   : [Hex upper: %X]\n", 255);
+	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
+	ret_ft = ft_printf("ft_printf: [ULONG_MAX: %X]\n", ULONG_MAX);
+	// ret_std = printf("printf   : [ULONG_MAX: %X]\n", ULONG_MAX);
+	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
 	// 	printf("==== POINTER TESTS ====\n");
 	// 	ret_ft = ft_printf("ft_printf: [Pointer: %p]\n", ptr);
 	// 	ret_std = printf("printf   : [Pointer: %p]\n", ptr);
