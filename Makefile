@@ -19,7 +19,7 @@ AR = ar rcs
 LIBFT = ./libft/libft.a
 LIBFTDIR = ./libft/
 
-SRCS = ft_printf.c ft_print_str.c \
+SRCS = ft_printf.c ft_print_str.c ft_print_ptr.c \
 			 ft_print_char.c ft_print_udec.c ft_print_hex.c \
 			 ft_print_dec.c libft/ft_putchar_fd.c libft/ft_strlen.c \
 

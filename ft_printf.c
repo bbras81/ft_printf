@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:19:49 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/04 09:02:04 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/05/04 12:27:34 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static int	ft_getformat(char c, va_list args)
 		counter += ft_print_hex(va_arg(args, unsigned int), "0123456789abgdef");
 	else if (c == 'X')
 		counter += ft_print_hex(va_arg(args, unsigned int), "0123456789ABCDEF");
+	else if (c == 'p')
+		counter += ft_print_ptr(va_arg(args, void *));
 	return (counter);
 }
 

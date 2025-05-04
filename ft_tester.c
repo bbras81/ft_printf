@@ -28,6 +28,8 @@ int	main(void)
 	int				min_int;
 	unsigned int	un;
 	unsigned int	max_unsigned;
+	void			*ptr;
+	void			*null_ptr;
 
 	original_ret = printf("%s\n", "");
 	printf_ret = ft_printf("%s\n", "");
@@ -44,8 +46,8 @@ int	main(void)
 	max_unsigned = 4294967295;
 	max_int = 2147483647;
 	min_int = -2147483648;
-	// 	void	*ptr = (void *)0x7ffe2b8ef1dc;
-	// 	void	*null_ptr = NULL;
+	ptr = (void *)0x7ffe2b8ef1dc;
+	null_ptr = NULL;
 	// 	unsigned int	vals[] = {0, 1, 42, 300, 4294967295U};
 	// 	int	i = 0;
 	printf("==== STRING TESTS ====\n");
@@ -90,21 +92,21 @@ int	main(void)
 	ret_ft = ft_printf("ft_printf: [ULONG_MAX: %X]\n", ULONG_MAX);
 	// ret_std = printf("printf   : [ULONG_MAX: %X]\n", ULONG_MAX);
 	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
-	// 	printf("==== POINTER TESTS ====\n");
-	// 	ret_ft = ft_printf("ft_printf: [Pointer: %p]\n", ptr);
-	// 	ret_std = printf("printf   : [Pointer: %p]\n", ptr);
-	// 	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
-	// 	ret_ft = ft_printf("ft_printf: [NULL pointer: %p]\n", null_ptr);
-	// 	ret_std = printf("printf   : [NULL pointer: %p]\n", null_ptr);
-	// 	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
-	// 	printf("==== NULL STRING TEST ====\n");
-	// 	ret_ft = ft_printf("ft_printf: [NULL string: %s]\n", NULL);
-	// 	ret_std = printf("printf   : [NULL string: %s]\n", NULL);
-	// 	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
-	// 	printf("==== PERCENT SIGN TEST ====\n");
-	// 	ret_ft = ft_printf("ft_printf: [%%]\n");
-	// 	ret_std = printf("printf   : [%%]\n");
-	// 	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
+	printf("==== POINTER TESTS ====\n");
+	ret_ft = ft_printf("ft_printf: [Pointer: %p]\n", ptr);
+	ret_std = printf("printf   : [Pointer: %p]\n", ptr);
+	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
+	ret_ft = ft_printf("ft_printf: [NULL pointer: %p]\n", null_ptr);
+	ret_std = printf("printf   : [NULL pointer: %p]\n", null_ptr);
+	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
+	printf("==== NULL STRING TEST ====\n");
+	ret_ft = ft_printf("ft_printf: [NULL string: %s]\n", NULL);
+	ret_std = printf("printf   : [NULL string: %p]\n", NULL);
+	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
+	printf("==== PERCENT SIGN TEST ====\n");
+	ret_ft = ft_printf("ft_printf: [%%]\n");
+	ret_std = printf("printf   : [%%]\n");
+	printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
 	// 	printf("==== TEST WITH %%u ====\n");
 	// 	while (i < 5)
 	// 	{

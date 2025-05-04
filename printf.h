@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 18:42:30 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/04 09:02:04 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/05/04 12:27:34 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -26,4 +26,5 @@ int	ft_putstr(char *str);
 int	ft_print_char(char c);
 int	ft_print_udec(unsigned int nbr);
 int	ft_print_hex(unsigned long nbr, char *base);
+int	ft_print_ptr(void *ptr);
 #endif
