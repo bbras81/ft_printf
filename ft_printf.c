@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunmigu <brunmigu@students.42porto.com>   +#+  +:+       +#+        */
+/*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:19:49 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/05/04 12:27:34 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:13:12 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,9 @@ static int	ft_getformat(char c, va_list args)
 
 	counter = 0;
 	if (c == '%')
-	{
-		counter = 1;
-		ft_putchar_fd('%', 1);
-	}
+		counter += ft_print_char('%');
 	else if (c == 'c')
-	{
-		counter = 1;
-		ft_putchar_fd(va_arg(args, int), 1);
-	}
+		counter += ft_print_char(va_arg(args, int));
 	else if (c == 's')
 		counter += ft_print_str(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
@@ -34,7 +28,7 @@ static int	ft_getformat(char c, va_list args)
 	else if (c == 'u')
 		counter += ft_print_udec(va_arg(args, unsigned int));
 	else if (c == 'x')
-		counter += ft_print_hex(va_arg(args, unsigned int), "0123456789abgdef");
+		counter += ft_print_hex(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
 		counter += ft_print_hex(va_arg(args, unsigned int), "0123456789ABCDEF");
 	else if (c == 'p')

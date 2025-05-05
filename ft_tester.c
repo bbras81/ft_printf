@@ -17,7 +17,7 @@ int	main(void)
 {
 	int				printf_ret;
 	int				original_ret;
-	int				ret_ft;
+	/*int				ret_ft;
 	int				ret_std;
 	char			*str;
 	char			empty_str[] = "";
@@ -29,15 +29,15 @@ int	main(void)
 	unsigned int	un;
 	unsigned int	max_unsigned;
 	void			*ptr;
-	void			*null_ptr;
+	void			*null_ptr;*/
 
-	original_ret = printf("%s\n", "");
-	printf_ret = ft_printf("%s\n", "");
-	printf("este e o retorno do ft_printf %d\n", printf_ret);
+	original_ret = printf(" %x ->", -100);
 	printf("este e o retorno do printf %d\n", original_ret);
+	printf_ret = ft_printf(" %x ->", -100);
+	printf("este e o retorno do ft_printf %d\n", printf_ret);
 	/*-----------------------------------------------------------*/
 	/*-----------------------------------------------------------*/
-	str = "Hello, World!";
+	/*str = "Hello, World!";
 	c = 'A';
 	// 	int		num = 42;
 	neg = -42;
@@ -115,7 +115,7 @@ int	main(void)
 	// 		ret_std = printf("printf   : [%u]\n", vals[i]);
 	// 		printf("Return ft_printf: %d | printf: %d\n\n", ret_ft, ret_std);
 	// 		i++;
-	// 	}
+	// 	}*/
 	/*-----------------------------------------------------------*/
 	/*-----------------------------------------------------------*/
 	/*-----------------------------------------------------------*/
