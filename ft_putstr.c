@@ -10,18 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
-  int	counter;
+	int	counter;
 
-  counter = 0;
-  
-  while (str[counter])
-  {
-    ft_putchar_fd(str[counter], 1);
-    counter++;
-  }
-  return (counter);
+	counter = 0;
+	while (str[counter])
+	{
+		ft_putchar_fd(str[counter], 1);
+		counter++;
+	}
+	return (counter);
 }

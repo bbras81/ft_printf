@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_print_hex(unsigned long nbr, char *base)
 {
-  int		counter;
-  size_t	base_len;
+	int		counter;
+	size_t	base_len;
 
-  counter = 0;
-  base_len = ft_strlen(base);
-  if (nbr >= base_len)
-    counter += ft_print_hex(nbr / base_len, base);
-  counter += ft_print_char(base[nbr % base_len]);
-  return (counter);
+	counter = 0;
+	base_len = ft_strlen(base);
+	if (nbr >= base_len)
+		counter += ft_print_hex(nbr / base_len, base);
+	counter += ft_print_char(base[nbr % base_len]);
+	return (counter);
 }
