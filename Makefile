@@ -28,7 +28,7 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
+$(OBJS): %.o: %.c
 	$(COMPILER) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJS) $(LIBFT)
