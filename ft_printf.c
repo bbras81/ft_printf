@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdarg.h>
 
 static int	ft_getformat(char c, va_list args)
 {
@@ -60,5 +61,6 @@ int	ft_printf(const char *str, ...)
 			counter_ret++;
 		}
 	}
+	va_end(args);
 	return (counter_ret);
 }
